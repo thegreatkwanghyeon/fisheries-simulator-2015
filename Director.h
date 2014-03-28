@@ -1,7 +1,6 @@
 #ifndef __DIRECTOR_H__
 #define __DIRECTOR_H__
 
-#include "stdafx.h"
 #include "SceneBase.h"
 
 class Director{
@@ -9,67 +8,25 @@ class Director{
 
 		static Director* pInstance;
 
-		SceneBase* currentScene = NULL;
+		std::vector<SceneBase*> sceneList;
 
-		Director(){
-
-		}
-
-		~Director(){
-
-		}
+		Director();
+		~Director();
 
 	public:
-		static Director* getInstance(){
+		static Director* getInstance();
 
-			if (NULL == pInstance){
+		static void freeInstance();
 
-				pInstance = new Director();
+		void pushScene(SceneBase* scene);
 
-			}
+		void popScene();
 
-			return pInstance;
+		void replaceScene(SceneBase* scene);
 
-		}
+		void update();
 
-		static void freeInstance(){
-
-			if (NULL != pInstance){
-				delete pInstance;
-				pInstance = NULL;
-
-			}
-
-		}
-
-		void changeScene(SceneBase* scene){
-			if(currentScene != NULL){
-
-				delete currentScene;
-				currentScene = scene;
-
-			}
-		}		
-
-		void runWithScene(SceneBase* scene){
-			if(currentScene == NULL){
-
-				currentScene = scene;
-
-			}
-		}
-
-		void update(){
-			if(currentScene != NULL)
-				currentScene->update();
-		}	
-
-		void draw(sf::RenderWindow& window){
-			if(currentScene != NULL)
-				currentScene->draw(window);
-		}					
+		void draw(sf::RenderWindow& window);		
 };
-
-Director* Director::pInstance = NULL;
 
 #endif

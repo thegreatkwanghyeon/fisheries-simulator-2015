@@ -1,0 +1,4 @@
+[Dd]ebug/
+[Rr]elease/
+TETRIS_SFML.vcxproj
+TETRIS_SFML.vcxproj.filters
