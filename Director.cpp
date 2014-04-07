@@ -55,7 +55,7 @@ void Director::draw(sf::RenderWindow& window){
 	sceneList.back()->draw(window);
 }
 void Director::setNewScene(){
-    if(sceneList.size() == 1)
+    if(sceneList.size() <= 1)
         return;
     delete sceneList[0];
     sceneList.erase(sceneList.begin());

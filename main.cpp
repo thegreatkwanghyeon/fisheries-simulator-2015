@@ -22,6 +22,7 @@ int main(){
 				m_pDirector->freeInstance();
 				m_pDirector = NULL;
 				window.close();
+				return 0;
 			}
 
 		}
