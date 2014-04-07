@@ -13,21 +13,7 @@ enum{
 
 class TitleScene : public SceneBase{
 	private:
-		EyeButton* startButton;
-		EyeButton* introButton;
 
-		Texture bgTexture;
-		Texture eyeTexture;
-		Sprite bg;
-		Sprite eye;
-
-		Font font;
-		Text text;
-		RectangleShape rec;
-		int alpha;
-
-		int state;
-		bool keyPress;
 	public:
 		TitleScene();
 		~TitleScene();

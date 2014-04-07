@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="NewFilter1">
+      <UniqueIdentifier>{094c48b3-d0de-42d0-a08a-3c109c7aaf8f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Director.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBase.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animation.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="Director.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="Well512.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
