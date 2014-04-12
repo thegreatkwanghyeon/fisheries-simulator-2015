@@ -1,102 +1,26 @@
-﻿빌드 시작: 2014-04-07 오전 1:26:55
+﻿빌드 시작: 2014-04-12 오후 9:43:46
      1>2 노드의 "E:\Dev\Project\fisheries2015\fisheries2015\fisheries2015.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
-         E:\Dev\VS12\VC\bin\CL.exe /c /IC:\sfml\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\fisheries2015.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Animation.cpp Director.cpp Global.cpp main.cpp SceneBase.cpp TileSet.cpp TitleScene.cpp
-         TitleScene.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.cpp(1): warning C4627: '#include "TitleScene.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.cpp(2): warning C4627: '#include "Director.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.cpp(113): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
-         TileSet.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\tileset.cpp(1): warning C4627: '#include "TileSet.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\tileset.cpp(24): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
-         SceneBase.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\scenebase.cpp(1): warning C4627: '#include "SceneBase.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\scenebase.cpp(18): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
+         E:\Dev\VS12\VC\bin\CL.exe /c /IC:\sfml\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Director.cpp main.cpp
          main.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(6): error C2871: 'sf' : 같은 이름을 가진 네임스페이스가 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(24): error C2871: 'sf' : 같은 이름을 가진 네임스페이스가 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(26): error C2653: 'sf' : 클래스 또는 네임스페이스 이름이 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(26): error C2146: 구문 오류 : ';'이(가) 'desktopMode' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(26): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(29): error C2146: 구문 오류 : ';'이(가) 'translate' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(29): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(29): error C2146: 구문 오류 : ')'이(가) '_eye' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(29): error C2059: 구문 오류 : ')'
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(34): error C2146: 구문 오류 : ';'이(가) 'centerPoint' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(34): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(35): error C2146: 구문 오류 : ';'이(가) 'intervalPoint' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(35): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(36): error C2146: 구문 오류 : ';'이(가) 'ratio' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(36): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(37): error C2146: 구문 오류 : ';'이(가) 'startPoint' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(37): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(42): error C2653: 'sf' : 클래스 또는 네임스페이스 이름이 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(42): error C2146: 구문 오류 : ';'이(가) 'view' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(47): error C2146: 구문 오류 : ';'이(가) 'viewRect' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(47): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(49): error C2146: 구문 오류 : ';'이(가) 'conceptColor' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\global.h(49): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\scenebase.h(16): error C2653: 'sf' : 클래스 또는 네임스페이스 이름이 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\scenebase.h(16): error C2061: 구문 오류 : 식별자 'RenderWindow'
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(8): error C2871: 'sf' : 같은 이름을 가진 네임스페이스가 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(16): error C2143: 구문 오류 : ';'이(가) '*' 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(16): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(17): error C2143: 구문 오류 : ';'이(가) '*' 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(17): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(19): error C2146: 구문 오류 : ';'이(가) 'bgTexture' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(19): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(20): error C2146: 구문 오류 : ';'이(가) 'eyeTexture' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(20): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(21): error C2146: 구문 오류 : ';'이(가) 'bg' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(21): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(22): error C2146: 구문 오류 : ';'이(가) 'eye' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(22): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(24): error C2146: 구문 오류 : ';'이(가) 'font' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(24): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(25): error C2146: 구문 오류 : ';'이(가) 'text' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(25): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(26): error C2146: 구문 오류 : ';'이(가) 'rec' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(26): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\titlescene.h(35): error C2061: 구문 오류 : 식별자 'RenderWindow'
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(11): error C2039: 'vector' : 'std'의 멤버가 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(11): error C2143: 구문 오류 : ';'이(가) '<' 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(11): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(11): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(29): error C2653: 'sf' : 클래스 또는 네임스페이스 이름이 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\director.h(29): error C2061: 구문 오류 : 식별자 'RenderWindow'
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(11): error C2228: '.reset' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
-                 'int' 형식입니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(11): error C2064: 항은 4개의 인수를 받아들이는 함수로 계산되지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C2653: 'sf' : 클래스 또는 네임스페이스 이름이 아닙니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C2065: 'RenderWindow' : 선언되지 않은 식별자입니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C2146: 구문 오류 : ';'이(가) 'window' 식별자 앞에 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C2064: 항은 2개의 인수를 받아들이는 함수로 계산되지 않습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C2065: 'Fullscreen' : 선언되지 않은 식별자입니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(13): error C3861: 'window': 식별자를 찾을 수 없습니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(15): error C2065: 'window' : 선언되지 않은 식별자입니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(15): error C2228: '.isOpen' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
-                 ''unknown-type'' 형식입니다.
-     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(15): fatal error C1903: 이전 오류를 복구할 수 없습니다. 컴파일이 중지됩니다.
-         Global.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\global.cpp(1): warning C4627: '#include "Global.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\global.cpp(74): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
+     1>e:\dev\project\fisheries2015\fisheries2015\main.cpp(11): warning C4244: '인수' : 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
          Director.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\director.cpp(1): warning C4627: '#include "Director.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\director.cpp(63): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
-         Animation.cpp
-     1>e:\dev\project\fisheries2015\fisheries2015\animation.cpp(1): warning C4627: '#include "Animation.h"': 미리 컴파일된 헤더 사용을 찾을 때 건너뛰었습니다.
-                 'stdafx.h'에 지시문 추가 또는 미리 컴파일된 헤더 다시 빌드
-     1>e:\dev\project\fisheries2015\fisheries2015\animation.cpp(93): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
          코드를 생성하고 있습니다...
-     1>"E:\Dev\Project\fisheries2015\fisheries2015\fisheries2015.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+       Link:
+         E:\Dev\VS12\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Dev\Project\fisheries2015\Debug\fisheries2015.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\sfml\lib "sfml-graphics.lib" "sfml-window.lib" "sfml-system.lib" "sfml-audio.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Dev\Project\fisheries2015\Debug\fisheries2015.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Dev\Project\fisheries2015\Debug\fisheries2015.lib" /MACHINE:X86 Debug\animation.obj
+         Debug\Director.obj
+         Debug\Global.obj
+         Debug\main.obj
+         Debug\SceneBase.obj
+         Debug\TileSet.obj
+         Debug\tinystr.obj
+         Debug\tinyxml.obj
+         Debug\tinyxmlerror.obj
+         Debug\tinyxmlparser.obj
+         Debug\TitleScene.obj
+         fisheries2015.vcxproj -> E:\Dev\Project\fisheries2015\Debug\fisheries2015.exe
+     1>"E:\Dev\Project\fisheries2015\fisheries2015\fisheries2015.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
-빌드하지 못했습니다.
+빌드했습니다.
 
-경과 시간: 00:00:00.67
+경과 시간: 00:00:13.30

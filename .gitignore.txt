@@ -1,5 +1,0 @@
-Debug/
-Release/
-TETRIS_SFML.vcxproj
-TETRIS_SFML.vcxproj.filters
-TETRIS_SFML.vcxproj.user
