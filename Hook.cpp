@@ -7,7 +7,7 @@
 
 
 
-Hook::Hook() : currentDirection(0){
+Hook::Hook() : currentDirection(0), movementConstant(0.05f){
 	texture.loadFromFile("img/hook.png");
 	sprite.setTexture(texture);
 	sprite.setPosition(300,300);
@@ -19,8 +19,8 @@ Hook::~Hook(){
 
 void Hook::update(){
 	
-	sprite.setRotation(sin(currentDirection)*90+90);
-	currentDirection += 0.001f;
+	sprite.setRotation((cos(currentDirection)+sin(currentDirection))*60+90);
+	currentDirection += movementConstant;
 }
 
 void Hook::draw(RenderWindow &window){

@@ -21,6 +21,9 @@ class Hook{
 		//Position Calculations
 		float currentDirection;
 		Vector2f currentPosition;
+		const float movementConstant;
+		
+
 
 	public:
 		Hook();

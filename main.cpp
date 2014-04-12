@@ -11,7 +11,7 @@ int main(){
 	view.reset(FloatRect(0, 0, constants::INTERNAL_WIDTH, constants::INTERNAL_HEIGHT));
 
 	sf::RenderWindow window(sf::VideoMode(constants::INTERNAL_WIDTH, constants::INTERNAL_HEIGHT), "Fisheries Simulator 2015", sf::Style::Default);
-
+	window.setFramerateLimit(60);
 	while (window.isOpen()){
 
         	sf::Event event;
