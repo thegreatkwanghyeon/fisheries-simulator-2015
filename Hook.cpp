@@ -19,6 +19,6 @@ void Hook::update(){
 }
 
 void Hook::draw(RenderWindow &window){
-	sprite.draw(window);
+	window.draw(sprite);
 
 }

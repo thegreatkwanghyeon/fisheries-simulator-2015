@@ -4,6 +4,7 @@
 #include "SceneBase.h"
 #include "Global.h"
 #include "stdafx.h"
+#include "Hook.h"
 
 using namespace sf;
 
@@ -13,6 +14,8 @@ enum{
 
 class TitleScene : public SceneBase{
 	private:
+
+		Hook *hook;
 
 	public:
 		TitleScene();

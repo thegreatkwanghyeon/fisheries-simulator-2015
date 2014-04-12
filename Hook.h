@@ -27,7 +27,7 @@ class Hook{
 		void update();
 		void draw(RenderWindow &window);
 
-}
+};
 
 
 
