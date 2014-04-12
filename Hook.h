@@ -7,6 +7,7 @@
 #define __HOOK_H__
 
 #include "stdafx.h"
+#include "cmath"
 
 using namespace sf;
 using namespace std;

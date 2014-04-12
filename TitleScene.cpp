@@ -8,6 +8,7 @@ TitleScene::~TitleScene(){
 
 }
 void TitleScene::update(){
+	hook->update();
 	
 }
 void TitleScene::draw(RenderWindow &window){
