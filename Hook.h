@@ -27,7 +27,6 @@ class Hook{
 		Vector2f endPoint; //갈고리 대가리가 위치하는 지점
 
 		//Delta time 계산
-		Time currentTime;
 		Clock deltaClock;
 
 

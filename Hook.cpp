@@ -18,14 +18,11 @@ Hook::~Hook(){
 }
 
 void Hook::update(){
-	
 	rotatedAngle = (cos(currentAngle)+sin(currentAngle))*60+90;
 	sprite.setRotation(rotatedAngle);
 	currentAngle += movementConstant*deltaClock.getElapsedTime().asSeconds();
 
-
-
-	currentTime = deltaClock.restart();
+	deltaClock.restart();
 }
 
 void Hook::draw(RenderWindow &window){
