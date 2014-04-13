@@ -5,6 +5,9 @@
 
 int main(){
 
+	sf::ContextSettings settings;
+	settings.antialiasingLevel = 8;
+
 	Director *m_pDirector = Director::getInstance();
 	m_pDirector->pushScene(new TitleScene());
 

@@ -9,6 +9,7 @@ TitleScene::~TitleScene(){
 }
 void TitleScene::update(){
 	hook->update();
+	hook->getEndPoint();
 	
 }
 void TitleScene::draw(RenderWindow &window){
