@@ -8,6 +8,7 @@
 
 #include "stdafx.h"
 #include "cmath"
+#include "hookhead.h"
 
 using namespace sf;
 using namespace std;
@@ -29,6 +30,11 @@ class Hook{
 		//Delta time 계산
 		Clock deltaClock;
 
+		//Hookhead 관련
+		Hookhead* hookhead;
+
+		//Memeber methods
+		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
 
 	public:
 		Hook();
@@ -39,7 +45,6 @@ class Hook{
 		Vector2f getSize();
 		Vector2f getPosition();
 		float getRotatedAngle();
-		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
 
 };
 

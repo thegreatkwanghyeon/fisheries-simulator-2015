@@ -5,6 +5,7 @@
 #include "Global.h"
 #include "stdafx.h"
 #include "Hook.h"
+#include "DolphinManager.h"
 
 using namespace sf;
 
@@ -16,6 +17,7 @@ class TitleScene : public SceneBase{
 	private:
 
 		Hook *hook;
+		DolphinManager *dol;
 
 	public:
 		TitleScene();

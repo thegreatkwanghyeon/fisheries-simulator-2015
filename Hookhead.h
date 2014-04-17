@@ -19,7 +19,7 @@ class Hookhead{
 		Sprite sprite;
 
 		//위치와 방향 계산
-		float currentDirection;
+		float currentAngle;
 		Vector2f currentPosition;
 		const float movementConstant;
 
@@ -30,6 +30,9 @@ class Hookhead{
 		~Hookhead();
 		void update();
 		void draw(RenderWindow &window);
+
+		void setPosition(Vector2f position); //Hook 에서 가져온 현재 hookhead의 위치
+		void setRotatedAngle(float rotatedAngle);
 
 };
 
