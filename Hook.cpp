@@ -1,11 +1,11 @@
 /*
- *  Date: 2014-04-13
- *	Version: 1.1
+ *  Date: 2014-04-20
+ *	Version: 1.2
  */
 
 #include "Hook.h"
 
-Hook::Hook() : currentAngle(0), movementConstant(3.33f){
+Hook::Hook() : currentAngle(0), rotatedAngle(0), movementConstant(3.33f), isRotatable(true), scaleRatio(1.0f){
 	texture.loadFromFile("img/hook.png");
 	sprite.setTexture(texture);
 	sprite.setOrigin(0,sprite.getGlobalBounds().height/2);
@@ -19,16 +19,37 @@ Hook::~Hook(){
 }
 
 void Hook::update(){
-	rotatedAngle = (cos(currentAngle)+sin(currentAngle))*60+90;
-	sprite.setRotation(rotatedAngle);
-	currentAngle += movementConstant*deltaClock.getElapsedTime().asSeconds();
+	if(isRotatable){
+		rotatedAngle = (cos(currentAngle)+sin(currentAngle))*60+90;
+		currentAngle += movementConstant*deltaClock.getElapsedTime().asSeconds();
+		sprite.setRotation(rotatedAngle);	
+	}
 
 	deltaClock.restart();
 
+	
 	hookhead->setPosition(getEndPoint());
 	hookhead->setRotatedAngle(rotatedAngle-90);
 	hookhead->update();
-	sprite.scale(1.005f, 1.00f);
+	sprite.scale(scaleRatio, 1.00f);
+
+	if(sprite.getScale().x<=1.0f){
+		doRotate();
+		stopScale();
+	}
+
+	if(Keyboard::isKeyPressed(Keyboard::Down)){
+		stretch();
+		stopRotate();
+	}
+
+	if(Keyboard::isKeyPressed(Keyboard::Up)){
+		shrink();
+		stopRotate();
+	}
+
+	
+
 }
 
 void Hook::draw(RenderWindow &window){
@@ -58,4 +79,25 @@ Vector2f Hook::getEndPoint(){
 
 	return tempPosition;
 
+}
+
+void Hook::stretch(){
+	scaleRatio = 1.01f;
+
+}
+
+void Hook::shrink(){
+	scaleRatio = 0.99f;
+}
+
+void Hook::stopScale(){
+	scaleRatio = 1.0f;
+}
+
+void Hook::doRotate(){
+	isRotatable = true;
+}
+
+void Hook::stopRotate(){
+	isRotatable = false;
 }

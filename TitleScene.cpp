@@ -12,7 +12,6 @@ TitleScene::~TitleScene(){
 }
 void TitleScene::update(){
 	hook->update();
-
 	dol->update();
 	
 }

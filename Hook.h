@@ -1,6 +1,6 @@
 /*
- *  Date: 2014-04-13
- *	Version: 1.1
+ *  Date: 2014-04-20
+ *	Version: 1.2
  */
 
 #ifndef __HOOK_H__
@@ -26,6 +26,8 @@ class Hook{
 		const float movementConstant;  //프레임당 currentAngle 이 증가되는 값. 높을수록 hook 이미지가 빠르게 회전됨
 		Transform* rotationTransform;
 		Vector2f endPoint; //갈고리 대가리가 위치하는 지점
+		bool isRotatable; 
+		float scaleRatio;
 
 		//Delta time 계산
 		Clock deltaClock;
@@ -33,8 +35,9 @@ class Hook{
 		//Hookhead 관련
 		Hookhead* hookhead;
 
-		//Memeber methods
+		//Private memeber methods
 		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
+		
 
 	public:
 		Hook();
@@ -45,6 +48,12 @@ class Hook{
 		Vector2f getSize();
 		Vector2f getPosition();
 		float getRotatedAngle();
+
+		void stretch();
+		void shrink();
+		void stopScale();
+		void doRotate();
+		void stopRotate();
 
 };
 
