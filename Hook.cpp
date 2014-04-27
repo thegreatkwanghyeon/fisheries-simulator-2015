@@ -5,7 +5,7 @@
 
 #include "Hook.h"
 
-Hook::Hook() : currentAngle(0), rotatedAngle(0), movementConstant(3.33f), isRotatable(true), scaleRatio(1.0f){
+Hook::Hook() : currentAngle(0), rotatedAngle(0), movementConstant(3.33f), isRotatable(true), scaleRatio(1.0f), screenWidth(800), screenHeight(600), hookable(true){
 	texture.loadFromFile("img/hook.png");
 	sprite.setTexture(texture);
 	sprite.setOrigin(0,sprite.getGlobalBounds().height/2);
@@ -43,16 +43,17 @@ void Hook::update(){
 		stopRotate();
 	}
 
-	if(Keyboard::isKeyPressed(Keyboard::Up)){
+	if(outOfScreen()){
 		shrink();
 		stopRotate();
 	}
-
 	
 
 }
 
 void Hook::draw(RenderWindow &window){
+	screenWidth = window.getSize().x;
+	screenHeight = window.getSize().y;
 	window.draw(sprite);
 	hookhead->draw(window);
 }
@@ -82,15 +83,17 @@ Vector2f Hook::getEndPoint(){
 }
 
 void Hook::stretch(){
+	hookable = true;
 	scaleRatio = 1.01f;
-
 }
 
 void Hook::shrink(){
+	hookable = false;
 	scaleRatio = 0.99f;
 }
 
 void Hook::stopScale(){
+	hookable = false;
 	scaleRatio = 1.0f;
 }
 
@@ -100,4 +103,15 @@ void Hook::doRotate(){
 
 void Hook::stopRotate(){
 	isRotatable = false;
+}
+
+bool Hook::outOfScreen(){
+	if((getEndPoint().x > screenWidth) || (getEndPoint().y > screenHeight) || (getEndPoint().x <= 0))
+		return true;
+	else
+		return false;
+}
+
+bool Hook::getHookable(){
+	return hookable;
 }

@@ -34,6 +34,9 @@ class Hookhead{
 		void setPosition(Vector2f position); //Hook 에서 가져온 현재 hookhead의 위치
 		void setRotatedAngle(float rotatedAngle);
 
+		const Transform& getTransform()const{ return sprite.getTransform(); }
+		const IntRect& getTextureRect()const{ return sprite.getTextureRect(); }
+
 };
 
 #endif

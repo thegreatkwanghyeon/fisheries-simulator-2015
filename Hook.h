@@ -1,8 +1,3 @@
-/*
- *  Date: 2014-04-20
- *	Version: 1.2
- */
-
 #ifndef __HOOK_H__
 #define __HOOK_H__
 
@@ -29,14 +24,19 @@ class Hook{
 		bool isRotatable; 
 		float scaleRatio;
 
+		//윈도우 사이즈 계산
+		int screenWidth;
+		int screenHeight;
+
 		//Delta time 계산
 		Clock deltaClock;
 
 		//Hookhead 관련
 		Hookhead* hookhead;
+		bool hookable;
 
 		//Private memeber methods
-		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
+
 		
 
 	public:
@@ -54,6 +54,14 @@ class Hook{
 		void stopScale();
 		void doRotate();
 		void stopRotate();
+
+		bool outOfScreen();
+		bool getHookable();
+
+		const Transform& getTransform()const{ return hookhead->getTransform(); }
+		const IntRect& getTextureRect()const{ return hookhead->getTextureRect(); }
+
+		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
 
 };
 

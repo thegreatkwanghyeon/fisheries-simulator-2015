@@ -4,6 +4,7 @@
 TitleScene::TitleScene(){
 	hook = new Hook();
 	dol = new DolphinManager();
+	dol->setHook(hook);
 	//dol->setPosition(Vector2f(100,100));
 }
 TitleScene::~TitleScene(){
@@ -13,10 +14,10 @@ TitleScene::~TitleScene(){
 void TitleScene::update(){
 	hook->update();
 	dol->update();
+
 	
 }
 void TitleScene::draw(RenderWindow &window){
 	hook->draw(window);
 	dol->draw(window);
-
 }

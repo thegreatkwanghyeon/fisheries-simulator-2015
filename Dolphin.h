@@ -8,13 +8,15 @@ using namespace std;
 class Dolphin{
 private :
 	Sprite sprite;
-	Texture texture;
+	Texture texture,deadTexture;
 	bool direction;
 	Clock delta;
 
 	float speed;
+
+	bool isDead;
 public:
-	Dolphin(String _path, bool _direction, float _speed);
+	Dolphin(String _path, String _deadPath ,bool _direction, float _speed);
 	~Dolphin();
 
 	void update();
@@ -22,6 +24,11 @@ public:
 
 	void setPosition(Vector2f _pos);
 	Vector2f getPosition();
+	const Transform& getTransform()const{ return sprite.getTransform(); }
+	const IntRect& getTextureRect()const{ return sprite.getTextureRect(); }
+
+	void setDead();
+	bool getDead();
 };
 
 #endif

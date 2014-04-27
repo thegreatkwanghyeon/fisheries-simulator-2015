@@ -7,10 +7,10 @@ Director::Director(){
 }
 
 Director::~Director(){
-	for(std::vector<SceneBase*>::iterator it = sceneList.begin();it!=sceneList.end();++it){
-		delete *(it);
-		sceneList.erase(it);
-		--it;
+	size_t size = sceneList.size();
+	for(unsigned int i=0;i<size;i++){
+		delete *(sceneList.begin());
+		sceneList.erase(sceneList.begin());
 	}
 }
 
