@@ -1,7 +1,11 @@
 #include "TimeManager.h"
 
 TimeManager::TimeManager() : timeRemaining(60.0f){
-
+	font.loadFromFile("font/numbers.ttf");
+	time.setFont(font);
+	time.setCharacterSize(24);
+	time.setPosition(0,30);
+	time.setColor(Color(255,255,255));
 }
 
 TimeManager::~TimeManager(){
@@ -10,11 +14,14 @@ TimeManager::~TimeManager(){
 void TimeManager::update(){
 
 	timeRemaining -= clock.getElapsedTime().asSeconds();
+	time.setString("Time : " + to_string((int)ceil(timeRemaining)));
+
 
 	clock.restart();
 }
 
 void TimeManager::draw(RenderWindow &window){
+	window.draw(time);
 }
 
 void TimeManager::setTime(float time){
