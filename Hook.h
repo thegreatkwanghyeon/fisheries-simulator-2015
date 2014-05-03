@@ -63,6 +63,8 @@ class Hook{
 
 		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
 
+		bool getState();
+
 };
 
 

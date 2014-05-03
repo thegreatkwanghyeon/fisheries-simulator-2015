@@ -60,3 +60,6 @@ void Director::setNewScene(){
     delete sceneList[0];
     sceneList.erase(sceneList.begin());
 }
+int Director::changeScene(){
+	return sceneList.back()->changeScene();
+}

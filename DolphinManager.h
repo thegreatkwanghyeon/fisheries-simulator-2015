@@ -13,6 +13,7 @@ private :
 	vector<Dolphin*> dolphinList;
 	const int numberOfDolphin;//화면에 존재할 돌고래의 수
 	Hook* hook;
+	bool isScore;
 public :
 	DolphinManager();
 	~DolphinManager();
@@ -20,6 +21,7 @@ public :
 	void draw(RenderWindow &window);
 
 	void setHook(Hook* _hook);
+	bool isGetScore();
 };
 
 #endif

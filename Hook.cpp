@@ -115,3 +115,8 @@ bool Hook::outOfScreen(){
 bool Hook::getHookable(){
 	return hookable;
 }
+bool Hook::getState(){
+	if(scaleRatio == 1.0)
+		return true;
+	return false;
+}

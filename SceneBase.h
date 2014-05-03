@@ -14,6 +14,7 @@ class SceneBase{
 
 		virtual void update();
 		virtual void draw(sf::RenderWindow& window);
+		virtual int changeScene();
 
 };
 

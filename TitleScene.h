@@ -4,23 +4,17 @@
 #include "SceneBase.h"
 #include "Global.h"
 #include "stdafx.h"
-#include "Hook.h"
-#include "DolphinManager.h"
-#include "EarningManager.h"
+#include "Button.h"
 
 using namespace sf;
-
-enum{
-	centerScene,intervalScene,preScene,normalScene
-};
+using namespace std;
 
 class TitleScene : public SceneBase{
 	private:
-
-		Hook *hook;
-		DolphinManager *dol;
-		EarningManager *earningManager;
-
+		Sprite sprite;
+		Texture texture;
+		Button* sButton;
+		Button* eButton;
 	public:
 		TitleScene();
 		~TitleScene();

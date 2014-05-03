@@ -2,31 +2,33 @@
 #include "Director.h"
 
 TitleScene::TitleScene(){
-	hook = new Hook();
-	dol = new DolphinManager();
-	earningManager = new EarningManager();
-	dol->setHook(hook);
-	
+	texture.loadFromFile("img/title.png");
+	sprite.setTexture(texture);
+
+	sButton = new Button("img/button.png");
+	sButton->setPosition(200,200);
+	sButton->setText("START",14);
+	eButton = new Button("img/button.png");
+	eButton->setPosition(200,400);
+	eButton->setText("END",14);
 }
 TitleScene::~TitleScene(){
-	delete dol;
-	delete hook;
-	delete earningManager;
+	delete eButton;
+	delete sButton;
 }
 void TitleScene::update(){
-	hook->update();
-	dol->update();
-	earningManager->update();
-
-
-	if(Keyboard::isKeyPressed(Keyboard::Return)){
-		earningManager->increaseEarning(50);
-	}
-
-	
+	sButton->update();
+	eButton->update();
 }
 void TitleScene::draw(RenderWindow &window){
-	hook->draw(window);
-	dol->draw(window);
-	earningManager->draw(window);
+	window.draw(sprite);
+	sButton->draw(window);
+	eButton->draw(window);
+}
+int TitleScene::changeScene(){
+	if(sButton->checkMouseClick())
+		return 2;
+	else if(eButton->checkMouseClick())
+		return 0;
+	return -1;
 }

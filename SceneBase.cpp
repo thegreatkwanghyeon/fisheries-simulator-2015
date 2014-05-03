@@ -15,3 +15,6 @@ void SceneBase::update(){
 void SceneBase::draw(sf::RenderWindow &window){
 
 }
+int SceneBase::changeScene(){
+	return -1;
+}
