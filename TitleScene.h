@@ -6,6 +6,7 @@
 #include "stdafx.h"
 #include "Hook.h"
 #include "DolphinManager.h"
+#include "EarningManager.h"
 
 using namespace sf;
 
@@ -18,6 +19,7 @@ class TitleScene : public SceneBase{
 
 		Hook *hook;
 		DolphinManager *dol;
+		EarningManager *earningManager;
 
 	public:
 		TitleScene();

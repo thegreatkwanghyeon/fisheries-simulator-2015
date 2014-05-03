@@ -38,7 +38,7 @@ void Hook::update(){
 		stopScale();
 	}
 
-	if(Keyboard::isKeyPressed(Keyboard::Down)){
+	if(Keyboard::isKeyPressed(Keyboard::Down) && scaleRatio==1.0f){
 		stretch();
 		stopRotate();
 	}
