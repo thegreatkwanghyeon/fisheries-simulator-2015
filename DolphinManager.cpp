@@ -1,9 +1,17 @@
 #include "DolphinManager.h"
+#include <stdlib.h>
+#include <time.h>
 
 DolphinManager::DolphinManager() : numberOfDolphin(5){
+	srand(time(NULL));
 	for(int i=0;i<numberOfDolphin;i++){
-		dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,0.5f*(float)(i+1)));
-		dolphinList[i]->setPosition(Vector2f(100,100*(i+1)));
+		if(rand()%2){
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,0.5f*(float)((rand()%5)+3)));
+			dolphinList[i]->setPosition(Vector2f(-100,5*(rand()%100)+100));
+		}else{
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,0.5f*(float)((rand()%5)+3)));
+			dolphinList[i]->setPosition(Vector2f(900,5*(rand()%100)+100));
+		}
 	}
 	isScore=false;
 }
@@ -13,6 +21,7 @@ DolphinManager::~DolphinManager(){
 	}
 }
 void DolphinManager::update(){
+	srand(time(NULL));
 	for(vector<Dolphin*>::iterator it = dolphinList.begin();it!=dolphinList.end();++it){
 		(*(it))->update();
 		if((*(it))->getDead()){
@@ -22,7 +31,16 @@ void DolphinManager::update(){
 				delete *(it);
 				it--;
 				dolphinList.erase(it+1);
+				continue;
+				//-----
 			}
+		}
+		if((*(it))->getPosition().x < -100 || (*(it))->getPosition().x > 1000){
+			//isScore=true;
+			delete *(it);
+			it--;
+			dolphinList.erase(it+1);
+			//-----
 		}
 	}
 	if(hook->getHookable()){//훅을 이용가능한 경우
@@ -31,6 +49,15 @@ void DolphinManager::update(){
 				(*(it))->setDead();
 				hook->shrink();
 			}
+		}
+	}
+	for(int i=dolphinList.size();i<numberOfDolphin;i++){
+		if(rand()%2){
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,0.5f*(float)((rand()%5)+1)));
+			dolphinList[i]->setPosition(Vector2f(-100,5*(rand()%100)+100));
+		}else{
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,0.5f*(float)((rand()%5)+1)));
+			dolphinList[i]->setPosition(Vector2f(900,5*(rand()%100)+100));
 		}
 	}
 }
