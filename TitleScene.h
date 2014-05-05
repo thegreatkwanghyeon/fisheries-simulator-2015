@@ -5,6 +5,8 @@
 #include "Global.h"
 #include "stdafx.h"
 #include "Button.h"
+#include "Director.h"
+#include "StageScene.h"
 
 using namespace sf;
 using namespace std;

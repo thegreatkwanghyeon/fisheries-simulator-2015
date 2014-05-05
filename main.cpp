@@ -49,7 +49,7 @@ int main(){
 		m_pDirector->draw(window);
 
         window.display();
-        m_pDirector->setNewScene();
+        //m_pDirector->setNewScene();
 
 	}
 

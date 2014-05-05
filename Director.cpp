@@ -43,7 +43,7 @@ void Director::popScene(){
 }
 
 void Director::replaceScene(SceneBase* scene){
-	//delete sceneList.back();
+	delete sceneList.back();
 	sceneList.push_back(scene);
 }
 

@@ -1,6 +1,4 @@
 #include "TitleScene.h"
-#include "Director.h"
-#include "GameScene.h"
 
 TitleScene::TitleScene(){
 	texture.loadFromFile("img/title.png");
@@ -22,8 +20,8 @@ void TitleScene::update(){
 	endButton->update();
 
 	if (startButton->checkMouseClick())
-		Director::getInstance()->pushScene(new GameScene());
-//	else if (endButton->checkMouseClick())
+		Director::getInstance()->pushScene(new StageScene());
+	//else if (endButton->checkMouseClick())
 	//	Director::getInstance()->freeInstance();
 }
 void TitleScene::draw(RenderWindow &window){
