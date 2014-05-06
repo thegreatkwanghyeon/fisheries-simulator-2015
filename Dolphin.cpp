@@ -13,7 +13,7 @@ Dolphin::Dolphin(String _path,String _deadPath, bool _direction, float _size){
 	else
 		sprite.setScale(_size,_size);
 	delta.restart();
-	speed=1.0+(1.0-_size)*2.0;
+	speed=1.5+(1.0-_size)*2.0;
 	isDead=false;
 	size=_size;
 }

@@ -12,6 +12,8 @@ Hook::Hook() : currentAngle(0), rotatedAngle(0), movementConstant(3.33f), isRota
 	sprite.setPosition(400,0);
 	rotationTransform = new Transform();
 	hookhead = new Hookhead();
+
+	shrinkSpeed=0.96;//±âº»°ª
 }
 
 Hook::~Hook(){
@@ -89,12 +91,13 @@ void Hook::stretch(){
 
 void Hook::shrink(){
 	hookable = false;
-	scaleRatio = 0.96f;
+	scaleRatio = shrinkSpeed;
 }
 
 void Hook::stopScale(){
 	hookable = false;
 	scaleRatio = 1.0f;
+	setShrinkSpeed(0.96);
 }
 
 void Hook::doRotate(){
@@ -119,4 +122,7 @@ bool Hook::getState(){
 	if(scaleRatio == 1.0)
 		return true;
 	return false;
+}
+void Hook::setShrinkSpeed(float _speed){
+	shrinkSpeed = _speed;
 }

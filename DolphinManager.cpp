@@ -26,6 +26,8 @@ void DolphinManager::update(){
 		for (vector<Dolphin*>::iterator it = dolphinList.begin(); it != dolphinList.end(); ++it){
 			if (!(*(it))->getDead() && BoundingBoxTest((*(it)), hook)){
 				(*(it))->setDead();
+				hook->setShrinkSpeed(0.90f + (*(it))->getSize()*0.08);
+				printf("hook speed : %.5f\n",0.90f + (*(it))->getSize()*0.08);
 				hook->shrink();
 				break;
 			}

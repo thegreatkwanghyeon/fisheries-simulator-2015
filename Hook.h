@@ -24,6 +24,8 @@ class Hook{
 		bool isRotatable; 
 		float scaleRatio;
 
+		float shrinkSpeed;//쪼그라드는 속도
+
 		//윈도우 사이즈 계산
 		int screenWidth;
 		int screenHeight;
@@ -64,6 +66,8 @@ class Hook{
 		Vector2f getEndPoint(); //Hookhead 가 존재해야 할 부분의 좌표값을 넘겨줌
 
 		bool getState();
+
+		void setShrinkSpeed(float _speed);
 
 };
 
