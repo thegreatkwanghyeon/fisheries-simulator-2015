@@ -2,7 +2,7 @@
 
 Button::Button(sf::String _path) : isButtonEnable(true),hotkey(sf::Keyboard::Unknown){
 	texture.loadFromFile(_path);
-	font.loadFromFile("font/spike.ttf");
+	font.loadFromFile("font/numbers.ttf");
 	tileset = new TileSet(texture, 1, 4);
 	sprite.setTexture(texture);
 	sprite.setTextureRect(tileset->getTile(NormalState));

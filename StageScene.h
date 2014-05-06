@@ -11,12 +11,18 @@
 using namespace sf;
 using namespace std;
 
+typedef struct stage{
+	Button *button;
+	unsigned int highScore;
+} Stage;
+
 class StageScene : public SceneBase{
 private:
 	vector<Button*> buttons;
 	vector<unsigned int> highScore;
-
-	int testtesttest;
+	vector<Stage> stages;
+	Texture texWorldMap;
+	Sprite spWorldMap;
 
 public:
 

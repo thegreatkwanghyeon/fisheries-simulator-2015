@@ -84,12 +84,12 @@ Vector2f Hook::getEndPoint(){
 
 void Hook::stretch(){
 	hookable = true;
-	scaleRatio = 1.01f;
+	scaleRatio = 1.04f;
 }
 
 void Hook::shrink(){
 	hookable = false;
-	scaleRatio = 0.99f;
+	scaleRatio = 0.96f;
 }
 
 void Hook::stopScale(){

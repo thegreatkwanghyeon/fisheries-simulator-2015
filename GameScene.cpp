@@ -2,6 +2,8 @@
 #include "Director.h"
 
 GameScene::GameScene(unsigned int &score) : difficulty(1){
+	texUnderwater.loadFromFile("img/underwater.png");
+	spUnderwater.setTexture(texUnderwater);
 	hook = new Hook();
 	dol = new DolphinManager();
 	earningManager = new EarningManager();
@@ -10,6 +12,8 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 }
 
 GameScene::GameScene(unsigned int &score, unsigned int difficulty){
+	texUnderwater.loadFromFile("img/underwater.png");
+	spUnderwater.setTexture(texUnderwater);
 	hook = new Hook();
 	dol = new DolphinManager();
 	earningManager = new EarningManager();
@@ -45,6 +49,7 @@ void GameScene::update(){
 	
 }
 void GameScene::draw(RenderWindow &window){
+	window.draw(spUnderwater);
 	hook->draw(window);
 	dol->draw(window);
 	earningManager->draw(window);

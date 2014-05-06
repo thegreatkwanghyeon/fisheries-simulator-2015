@@ -22,6 +22,9 @@ class GameScene : public SceneBase{
 		unsigned int *highScore;
 		unsigned int difficulty;
 
+		Texture texUnderwater;
+		Sprite spUnderwater;
+
 	public:
 		GameScene(unsigned int &test);
 		GameScene(unsigned int &score, unsigned int difficulty);
