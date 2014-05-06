@@ -22,6 +22,15 @@ DolphinManager::~DolphinManager(){
 }
 void DolphinManager::update(){
 	srand(time(NULL));
+	if (hook->getHookable()){//훅을 이용가능한 경우
+		for (vector<Dolphin*>::iterator it = dolphinList.begin(); it != dolphinList.end(); ++it){
+			if (!(*(it))->getDead() && BoundingBoxTest((*(it)), hook)){
+				(*(it))->setDead();
+				hook->shrink();
+				break;
+			}
+		}
+	}
 	for(vector<Dolphin*>::iterator it = dolphinList.begin();it!=dolphinList.end();++it){
 		(*(it))->update();
 		if((*(it))->getDead()){
@@ -41,14 +50,6 @@ void DolphinManager::update(){
 			it--;
 			dolphinList.erase(it+1);
 			//-----
-		}
-	}
-	if(hook->getHookable()){//훅을 이용가능한 경우
-		for(vector<Dolphin*>::iterator it = dolphinList.begin();it!=dolphinList.end();++it){
-			if( !(*(it))->getDead() && BoundingBoxTest( (*(it)),hook)){
-				(*(it))->setDead();
-				hook->shrink();
-			}
 		}
 	}
 	for(int i=dolphinList.size();i<numberOfDolphin;i++){

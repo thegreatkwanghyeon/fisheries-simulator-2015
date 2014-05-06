@@ -13,8 +13,8 @@ class TitleScene : public SceneBase{
 	private:
 		Sprite sprite;
 		Texture texture;
-		Button* sButton;
-		Button* eButton;
+		Button* startButton;
+		Button* endButton;
 	public:
 		TitleScene();
 		~TitleScene();

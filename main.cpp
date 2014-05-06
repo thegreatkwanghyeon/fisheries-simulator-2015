@@ -22,7 +22,7 @@ int main(){
 
         	while (window.pollEvent(event)){
 
-			if (event.type == sf::Event::Closed || m_pDirector->changeScene() == 0){
+			if (event.type == sf::Event::Closed || m_pDirector->isClearScene()){
 				m_pDirector->freeInstance();
 				m_pDirector = NULL;
 				window.close();
@@ -36,13 +36,6 @@ int main(){
 			m_pDirector = NULL;
 			window.close();
 			return 0;
-		}
-
-		if(m_pDirector->changeScene() == 1){//title
-			m_pDirector->replaceScene(new TitleScene());
-		}
-		if(m_pDirector->changeScene() == 2){//game
-			m_pDirector->replaceScene(new GameScene());
 		}
 
 		window.clear();

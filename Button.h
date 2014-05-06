@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "tileset.h"
-#include "SFML/Audio.hpp"
 #include "global.h"
 
 class Button {

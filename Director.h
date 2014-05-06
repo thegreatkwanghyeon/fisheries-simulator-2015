@@ -30,7 +30,7 @@ class Director{
 
 		void setNewScene();
 
-		int changeScene();
+		bool isClearScene();
 };
 
 #endif

@@ -1,9 +1,9 @@
 #ifndef __STDAFX_H__
 #define __STDAFX_H__
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
+#include <SFML/graphics.hpp>
+#include <SFML/window.hpp>
+#include <SFML/system.hpp>
 
 #include "tinyxml.h"
 #include <math.h>
