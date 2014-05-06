@@ -8,6 +8,7 @@
 #include "DolphinManager.h"
 #include "EarningManager.h"
 #include "TimeManager.h"
+#include "Button.h"
 
 using namespace sf;
 using namespace std;
@@ -16,6 +17,7 @@ class GameScene : public SceneBase{
 	private:
 
 		Hook *hook;
+		Button* endButton;
 		DolphinManager *dol;
 		EarningManager *earningManager;
 		TimeManager *timeManager;
@@ -24,6 +26,9 @@ class GameScene : public SceneBase{
 
 		Texture texUnderwater;
 		Sprite spUnderwater;
+
+		bool isEnd;
+		void endGame();
 
 	public:
 		GameScene(unsigned int &test);

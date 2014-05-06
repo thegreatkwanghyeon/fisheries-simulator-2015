@@ -9,6 +9,11 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 	earningManager = new EarningManager();
 	timeManager = new TimeManager();
 	dol->setHook(hook);
+
+	isEnd=false;
+	endButton = new Button("img/button.png");
+	endButton->setPosition(270.0f,200.0f);
+	endButton->setText("END",14);
 }
 
 GameScene::GameScene(unsigned int &score, unsigned int difficulty){
@@ -21,6 +26,11 @@ GameScene::GameScene(unsigned int &score, unsigned int difficulty){
 	dol->setHook(hook);
 	highScore = &score;
 	this->difficulty = difficulty;
+
+	isEnd=false;
+	endButton = new Button("img/button.png");
+	endButton->setPosition(270.0f,200.0f);
+	endButton->setText("END",14);
 }
 
 
@@ -32,18 +42,26 @@ GameScene::~GameScene(){
 	delete earningManager;
 }
 void GameScene::update(){
+	int getScore;
+	if(isEnd){
+		endGame();
+		return;
+	}
 	hook->update();
 	dol->update();
 	earningManager->update();
 	timeManager->update();
 
-
-	if(dol->isGetScore()){
-		earningManager->increaseEarning(50);
+	getScore = dol->getScore();
+	if(getScore != 0){
+		earningManager->increaseEarning(getScore);
 	}
 
 	if(Keyboard::isKeyPressed(Keyboard::BackSpace)){
 		Director::getInstance()->popScene();
+	}
+	if(timeManager->getTime() <= 0.0f){
+		isEnd=true;
 	}
 
 	
@@ -54,7 +72,15 @@ void GameScene::draw(RenderWindow &window){
 	dol->draw(window);
 	earningManager->draw(window);
 	timeManager->draw(window);
+	if(isEnd)
+		endButton->draw(window);
 }
 int GameScene::changeScene(){
 	return -1;
+}
+void GameScene::endGame(){
+	endButton->update();
+	if(endButton->checkMouseClick())
+		Director::getInstance()->popScene();
+
 }

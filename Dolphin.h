@@ -13,10 +13,10 @@ private :
 	Clock delta;
 
 	float speed;
-
+	float size;
 	bool isDead;
 public:
-	Dolphin(String _path, String _deadPath ,bool _direction, float _speed);
+	Dolphin(String _path, String _deadPath ,bool _direction, float _size);
 	~Dolphin();
 
 	void update();
@@ -29,6 +29,7 @@ public:
 
 	void setDead();
 	bool getDead();
+	float getSize(){return size;}
 };
 
 #endif

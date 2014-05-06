@@ -6,10 +6,10 @@ DolphinManager::DolphinManager() : numberOfDolphin(5){
 	srand(time(NULL));
 	for(int i=0;i<numberOfDolphin;i++){
 		if(rand()%2){
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,0.5f*(float)((rand()%5)+3)));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,1.0f-(rand()%3)*0.1));
 			dolphinList[i]->setPosition(Vector2f(-100,5*(rand()%100)+100));
 		}else{
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,0.5f*(float)((rand()%5)+3)));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,1.0f-(rand()%3)*0.1));
 			dolphinList[i]->setPosition(Vector2f(900,5*(rand()%100)+100));
 		}
 	}
@@ -37,6 +37,7 @@ void DolphinManager::update(){
 			(*(it))->setPosition(hook->getEndPoint());
 			if(hook->getState()){
 				isScore=true;
+				score=(*(it))->getSize()*50.0f;
 				delete *(it);
 				it--;
 				dolphinList.erase(it+1);
@@ -54,10 +55,10 @@ void DolphinManager::update(){
 	}
 	for(int i=dolphinList.size();i<numberOfDolphin;i++){
 		if(rand()%2){
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,0.5f*(float)((rand()%5)+1)));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,1.0f-(rand()%3)*0.1));
 			dolphinList[i]->setPosition(Vector2f(-100,5*(rand()%100)+100));
 		}else{
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,0.5f*(float)((rand()%5)+1)));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,1.0f-(rand()%3)*0.1));
 			dolphinList[i]->setPosition(Vector2f(900,5*(rand()%100)+100));
 		}
 	}
@@ -70,10 +71,10 @@ void DolphinManager::draw(RenderWindow &window){
 void DolphinManager::setHook(Hook* _hook){
 	hook = _hook;
 }
-bool DolphinManager::isGetScore(){
+int DolphinManager::getScore(){
 	if(isScore){
 		isScore=false;
-		return true;
+		return score;
 	}
 	return false;
 }

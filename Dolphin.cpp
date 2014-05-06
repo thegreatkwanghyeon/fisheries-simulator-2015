@@ -1,6 +1,7 @@
 #include "Dolphin.h"
 
-Dolphin::Dolphin(String _path,String _deadPath, bool _direction, float _speed){
+Dolphin::Dolphin(String _path,String _deadPath, bool _direction, float _size){
+	printf("%.2f\n",_size);
 	texture.loadFromFile(_path);
 	deadTexture.loadFromFile(_deadPath);
 	sprite.setTexture(texture);
@@ -8,12 +9,13 @@ Dolphin::Dolphin(String _path,String _deadPath, bool _direction, float _speed){
 
 	direction = _direction;
 	if(direction)
-		sprite.setScale(-1.0,1.0);
+		sprite.setScale(-_size,_size);
 	else
-		sprite.setScale(1.0,1.0);
+		sprite.setScale(_size,_size);
 	delta.restart();
-	speed=_speed;
+	speed=1.0+(1.0-_size)*2.0;
 	isDead=false;
+	size=_size;
 }
 Dolphin::~Dolphin(){
 }
