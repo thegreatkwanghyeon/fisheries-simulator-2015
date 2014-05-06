@@ -16,7 +16,7 @@ private :
 	float size;
 	bool isDead;
 public:
-	Dolphin(String _path, String _deadPath ,bool _direction, float _size);
+	Dolphin(unsigned int _color, bool _direction, float _size);
 	~Dolphin();
 
 	void update();
