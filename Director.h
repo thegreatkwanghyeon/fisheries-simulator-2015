@@ -29,8 +29,6 @@ class Director{
 		void draw(sf::RenderWindow& window);
 
 		void setNewScene();
-
-		bool isClearScene();
 };
 
 #endif

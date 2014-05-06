@@ -20,7 +20,6 @@ class TitleScene : public SceneBase{
 		~TitleScene();
 		void update();
 		void draw(RenderWindow &window);
-		int changeScene();
 };
 
 #endif

@@ -28,12 +28,6 @@ int main(){
 				window.close();
 				return 0;
 			}
-			if (m_pDirector == NULL){
-				window.close();
-				return 0;
-			}
-
-
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
@@ -48,6 +42,10 @@ int main(){
 		window.setView(view);
 
 		m_pDirector->update();
+		if (m_pDirector == NULL){
+			window.close();
+			return 0;
+		}
 		m_pDirector->draw(window);
 
         window.display();

@@ -60,8 +60,3 @@ void Director::setNewScene(){
     delete sceneList[0];
     sceneList.erase(sceneList.begin());
 }
-bool Director::isClearScene(){
-	if (sceneList.size() == 0)
-		return true;
-	return false;
-}
