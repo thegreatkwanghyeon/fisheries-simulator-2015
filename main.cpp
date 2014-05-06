@@ -22,12 +22,17 @@ int main(){
 
         	while (window.pollEvent(event)){
 
-			if (event.type == sf::Event::Closed || m_pDirector->isClearScene()){
+			if (event.type == sf::Event::Closed){
 				m_pDirector->freeInstance();
 				m_pDirector = NULL;
 				window.close();
 				return 0;
 			}
+			if (m_pDirector == NULL){
+				window.close();
+				return 0;
+			}
+
 
 		}
 

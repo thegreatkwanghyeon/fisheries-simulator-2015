@@ -24,7 +24,7 @@ void TitleScene::update(){
 	if (startButton->checkMouseClick())
 		Director::getInstance()->pushScene(new GameScene());
 	else if (endButton->checkMouseClick())
-		Director::getInstance()->popScene();
+		Director::getInstance()->;
 }
 void TitleScene::draw(RenderWindow &window){
 	window.draw(sprite);
