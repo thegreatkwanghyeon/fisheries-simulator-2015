@@ -6,11 +6,11 @@ DolphinManager::DolphinManager() : numberOfDolphin(5){
 	srand(time(NULL));
 	for(int i=0;i<numberOfDolphin;i++){
 		if(rand()%2){
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,1.0f-(rand()%3)*0.1));
-			dolphinList[i]->setPosition(Vector2f(-100,5*(rand()%100)+100));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",true,1.0f-(rand()%5)*0.1));
+			dolphinList[i]->setPosition(Vector2f(-100,(rand()%400)+200));
 		}else{
-			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,1.0f-(rand()%3)*0.1));
-			dolphinList[i]->setPosition(Vector2f(900,5*(rand()%100)+100));
+			dolphinList.push_back(new Dolphin("img/dolphin.png","img/dolphinDead.png",false,1.0f-(rand()%5)*0.1));
+			dolphinList[i]->setPosition(Vector2f(900,(rand()%400)+200));
 		}
 	}
 	isScore=false;
@@ -26,8 +26,8 @@ void DolphinManager::update(){
 		for (vector<Dolphin*>::iterator it = dolphinList.begin(); it != dolphinList.end(); ++it){
 			if (!(*(it))->getDead() && BoundingBoxTest((*(it)), hook)){
 				(*(it))->setDead();
-				hook->setShrinkSpeed(0.90f + (*(it))->getSize()*0.08);
-				printf("hook speed : %.5f\n",0.90f + (*(it))->getSize()*0.08);
+				hook->setShrinkSpeed(0.91f + (*(it))->getSize()*0.08);
+				printf("hook speed : %.5f\n",0.91f + (*(it))->getSize()*0.08);
 				hook->shrink();
 				break;
 			}
