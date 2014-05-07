@@ -14,7 +14,7 @@ TimeManager::~TimeManager(){
 void TimeManager::update(){
 
 	timeRemaining -= clock.getElapsedTime().asSeconds();
-	time.setString("Time : " + to_string((int)ceil(timeRemaining)));
+	//time.setString("Time : " + to_string((int)ceil(timeRemaining)));
 
 
 	clock.restart();

@@ -14,7 +14,7 @@ void EarningManager::update(){
 	if(visualEarning < currentEarning)
 		visualEarning++;
 
-	earning.setString("Earning : " + to_string(visualEarning));
+//	earning.setString("Earning : " + to_string(visualEarning));
 
 }
 
