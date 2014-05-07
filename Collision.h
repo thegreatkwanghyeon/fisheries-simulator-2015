@@ -3,12 +3,25 @@
 
 #include "Dolphin.h"
 #include "Hook.h"
+#include "Shell.h"
 
 class OrientedBoundingBox{
 public:
 	OrientedBoundingBox(const Dolphin* dolphin){
 		sf::Transform trans = dolphin->getTransform();
 		sf::IntRect local = dolphin->getTextureRect();
+		Vector2f margin;
+		margin.x=local.width/3.0f;
+		margin.y=local.height/3.0f;
+
+		Points[0] = trans.transformPoint(margin.x, margin.y);
+		Points[1] = trans.transformPoint(local.width-margin.x, margin.y);
+		Points[2] = trans.transformPoint(local.width-margin.x, local.height-margin.y);
+		Points[3] = trans.transformPoint(margin.x, local.height-margin.y);
+	}
+	OrientedBoundingBox(const Shell* shell){
+		sf::Transform trans = shell->getTransform();
+		sf::IntRect local = shell->getTextureRect();
 		Vector2f margin;
 		margin.x=local.width/3.0f;
 		margin.y=local.height/3.0f;

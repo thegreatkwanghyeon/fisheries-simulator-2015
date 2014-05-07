@@ -14,23 +14,25 @@ StageScene::StageScene(){
 	}
 
 	
-	for(auto iter=stages.begin(); iter!=stages.end(); iter++){
-		iter->button->setPosition(20,20);
+	for(vector<Stage>::iterator iter=stages.begin(); iter!=stages.end(); iter++){
+		//iter->button->setPosition(20,20);
+	//	iter->button->setOrigin(25,75);
 		iter->button->setText(to_string(iter->highScore),14);
 	}
 
-	stages.at(0).button->setPosition(0,0);
-	stages.at(1).button->setPosition(100,0);
-	stages.at(2).button->setPosition(200,0);
-	stages.at(3).button->setPosition(0,100);
-	stages.at(4).button->setPosition(0,200);
-	stages.at(5).button->setPosition(500,350);
+	stages.at(0).button->setPosition(50-25,150-75);
+	stages.at(1).button->setPosition(250-25,200-75);
+	stages.at(2).button->setPosition(350-25,200-75);
+
+	stages.at(3).button->setPosition(400-25,300-75);
+	stages.at(4).button->setPosition(600-25,100-75);
+	stages.at(5).button->setPosition(350-25,550-75);
 
 
 }
 
 StageScene::~StageScene(){
-	for(auto iter=stages.begin(); iter!=stages.end(); iter++){
+	for(vector<Stage>::iterator iter=stages.begin(); iter!=stages.end(); iter++){
 		delete iter->button;
 	}
 
@@ -40,10 +42,7 @@ StageScene::~StageScene(){
 }
 
 void StageScene::update(){
-
-
-	
-	for(auto iter=stages.begin(); iter != stages.end(); iter++){
+	for(vector<Stage>::iterator iter=stages.begin(); iter != stages.end(); iter++){
 		iter->button->update();
 		iter->button->setText(to_string(iter->highScore),14);
 
@@ -71,7 +70,7 @@ void StageScene::update(){
 
 void StageScene::draw(RenderWindow &window){
 	window.draw(spWorldMap);
-	for(auto iter=stages.begin(); iter!=stages.end(); iter++){
+	for(vector<Stage>::iterator iter=stages.begin(); iter!=stages.end(); iter++){
 		iter->button->draw(window);
 	}
 	

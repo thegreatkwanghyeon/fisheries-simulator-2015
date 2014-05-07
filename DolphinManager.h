@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "Dolphin.h"
 #include "Hook.h"
+#include "Well512.h"
 #include "collision.h"
 
 using namespace sf;
@@ -15,6 +16,7 @@ private :
 	Hook* hook;
 	bool isScore;
 	float score;
+	Well512 random;
 public :
 	DolphinManager();
 	~DolphinManager();

@@ -9,6 +9,7 @@
 #include "EarningManager.h"
 #include "TimeManager.h"
 #include "Button.h"
+#include "Shell.h"
 
 using namespace sf;
 using namespace std;
@@ -19,6 +20,7 @@ class GameScene : public SceneBase{
 		Hook *hook;
 		Button* endButton;
 		DolphinManager *dol;
+		Shell *shell;
 		EarningManager *earningManager;
 		TimeManager *timeManager;
 		unsigned int *highScore;

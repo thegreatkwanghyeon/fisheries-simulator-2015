@@ -106,3 +106,6 @@ void Button::disableButton(){
 bool Button::getButtonEneble(){
 	return isButtonEnable;
 }
+void Button::setOrigin(float x, float y){
+	sprite.setOrigin(x,y);
+}

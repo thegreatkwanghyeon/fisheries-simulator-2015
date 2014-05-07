@@ -5,10 +5,10 @@ TitleScene::TitleScene(){
 	sprite.setTexture(texture);
 
 	startButton = new Button("img/button.png");
-	startButton->setPosition(200,200);
+	startButton->setPosition(450,330);
 	startButton->setText("START",14);
 	endButton = new Button("img/button.png");
-	endButton->setPosition(200,400);
+	endButton->setPosition(450,450);
 	endButton->setText("END",14);
 }
 TitleScene::~TitleScene(){

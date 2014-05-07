@@ -10,6 +10,8 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 	timeManager = new TimeManager();
 	dol->setHook(hook);
 
+	shell = new Shell();
+
 	isEnd=false;
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
@@ -27,10 +29,13 @@ GameScene::GameScene(unsigned int &score, unsigned int difficulty){
 	highScore = &score;
 	this->difficulty = difficulty;
 
+	shell = new Shell();
+
 	isEnd=false;
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
 	endButton->setText("END",14);
+
 }
 
 
@@ -63,7 +68,7 @@ void GameScene::update(){
 	if(timeManager->getTime() <= 0.0f){
 		isEnd=true;
 	}
-
+	shell->update();
 	
 }
 void GameScene::draw(RenderWindow &window){
@@ -74,6 +79,7 @@ void GameScene::draw(RenderWindow &window){
 	timeManager->draw(window);
 	if(isEnd)
 		endButton->draw(window);
+	shell->draw(window);
 }
 int GameScene::changeScene(){
 	return -1;

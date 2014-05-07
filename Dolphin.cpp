@@ -1,9 +1,14 @@
 #include "Dolphin.h"
+#include "Well512.h"
 
-Dolphin::Dolphin(String _path,String _deadPath, bool _direction, float _size){
+Dolphin::Dolphin(unsigned int _color, bool _direction, float _size){
 	printf("%.2f\n",_size);
-	texture.loadFromFile(_path);
-	deadTexture.loadFromFile(_deadPath);
+
+	switch(_color){//swprint¾²±â ±ÍÂú¾Æ¼­..
+		case 1: texture.loadFromFile("img/dolphin01.png");deadTexture.loadFromFile("img/dolphinDead01.png");break;
+		case 2: texture.loadFromFile("img/dolphin02.png");deadTexture.loadFromFile("img/dolphinDead02.png");break;
+		case 3: texture.loadFromFile("img/dolphin03.png");deadTexture.loadFromFile("img/dolphinDead03.png");
+	}
 	sprite.setTexture(texture);
 	sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
 

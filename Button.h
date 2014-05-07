@@ -45,6 +45,7 @@ class Button {
 		bool checkMouseClick();
 		void setHotkey(sf::Keyboard::Key _hotkey);
 		void setSprite(sf::String _path);
+		void setOrigin(float x, float y);
 
 		bool getButtonEneble();
 		void setTexture(sf::String _path);
