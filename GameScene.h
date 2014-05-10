@@ -36,6 +36,12 @@ class GameScene : public SceneBase{
 		bool bulletTime;
 		void endGame();
 
+		//아래는 쉐이더 관련...
+		Shader shader;
+		Texture drawingTex;
+		Image drawingBuffer;
+		Sprite drawingSprite;
+
 	public:
 		GameScene(unsigned int &test);
 		GameScene(unsigned int &score, unsigned int difficulty);

@@ -17,6 +17,10 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
 	endButton->setText("END",14);
+
+	shader.loadFromFile("shaders/darker.glsl",sf::Shader::Fragment);
+	shader.setParameter("texture",drawingTex);
+	shader.setParameter("center", sf::Vector2f(0.5, 0.5));
 }
 
 GameScene::GameScene(unsigned int &score, unsigned int difficulty){
@@ -37,6 +41,10 @@ GameScene::GameScene(unsigned int &score, unsigned int difficulty){
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
 	endButton->setText("END",14);
+
+	shader.loadFromFile("shaders/darker.glsl",sf::Shader::Fragment);
+	shader.setParameter("texture",drawingTex);
+	shader.setParameter("center", sf::Vector2f(0.5, 0.5));
 
 }
 
@@ -95,6 +103,7 @@ void GameScene::update(){
 			shell->setDead(true);
 		}
 	}
+	
 }
 void GameScene::draw(RenderWindow &window){
 	window.draw(spUnderwater);
@@ -106,6 +115,17 @@ void GameScene::draw(RenderWindow &window){
 		endButton->draw(window);
 	if(shell != NULL)
 		shell->draw(window);
+	if(bulletTime){
+		float alphaRatio =85.0*(3.0-bulletClock.getElapsedTime().asSeconds());
+		if(alphaRatio < 0)
+			alphaRatio *= -1;
+		printf("alpha %.4f\n",alphaRatio);
+		drawingBuffer.create(constants::INTERNAL_WIDTH,constants::INTERNAL_HEIGHT,sf::Color::Color(0,0,0,255-alphaRatio));
+		drawingTex.loadFromImage(drawingBuffer);
+		drawingSprite.setTexture(drawingTex);
+		window.draw(drawingSprite, &shader);
+		drawingBuffer.create(constants::INTERNAL_WIDTH,constants::INTERNAL_HEIGHT,sf::Color::Black);
+	}
 }
 int GameScene::changeScene(){
 	return -1;
