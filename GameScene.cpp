@@ -13,6 +13,7 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 	shell = new Shell();
 
 	isEnd=false;
+	bulletTime=false;
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
 	endButton->setText("END",14);
@@ -32,6 +33,7 @@ GameScene::GameScene(unsigned int &score, unsigned int difficulty){
 	shell = new Shell();
 
 	isEnd=false;
+	bulletTime=false;
 	endButton = new Button("img/button.png");
 	endButton->setPosition(270.0f,200.0f);
 	endButton->setText("END",14);
@@ -45,12 +47,23 @@ GameScene::~GameScene(){
 	delete dol;
 	delete hook;
 	delete earningManager;
+	//if(shell != NULL)
+		delete shell;
 }
 void GameScene::update(){
 	int getScore;
 	if(isEnd){
 		endGame();
 		return;
+	}
+	if(!hook->getHookable() && !bulletTime && Keyboard::isKeyPressed(Keyboard::Y)){
+		printf("bulletTime 1/20\n");
+		timeRatio=0.05f;
+		bulletTime=true;
+		bulletClock.restart();
+	}else if(bulletTime && (hook->getHookable() == true || bulletClock.getElapsedTime().asSeconds() >= 5.0f)){
+		timeRatio=1.0f;
+		bulletTime=false;
 	}
 	hook->update();
 	dol->update();
@@ -69,7 +82,15 @@ void GameScene::update(){
 		isEnd=true;
 	}
 	shell->update();
-	
+	if(shell->getDead() == true){
+		shell->setPosition(hook->getEndPoint());
+		//if(hook->getHookable()){//훅이 본위치로 돌아간경우
+		//	delete shell;
+	//	}
+	}else if(shell->getDead() == false /*&& shell->getCollision()*/ && BoundingBoxTest(shell,hook)){
+		printf("collision!!! shell!!!\n");
+		shell->setDead(true);
+	}
 }
 void GameScene::draw(RenderWindow &window){
 	window.draw(spUnderwater);
@@ -79,7 +100,8 @@ void GameScene::draw(RenderWindow &window){
 	timeManager->draw(window);
 	if(isEnd)
 		endButton->draw(window);
-	shell->draw(window);
+	//if(shell != NULL)
+		shell->draw(window);
 }
 int GameScene::changeScene(){
 	return -1;

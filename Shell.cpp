@@ -10,6 +10,7 @@ Shell::Shell(){
 	spShell.setPosition(400.0f,600.0f-spShell.getLocalBounds().height+5.0f);
 
 	chkOpen=false;
+	isDead=false;
 }
 
 Shell::~Shell(){
@@ -17,6 +18,10 @@ Shell::~Shell(){
 }
 
 void Shell::update(){
+	if(isDead){
+		spShell.setTexture(texClosedShell);
+		return;
+	}
 	if(chkOpen){
 		if(clock.getElapsedTime().asSeconds() >= 3.0){
 			chkOpen=false;
@@ -26,7 +31,7 @@ void Shell::update(){
 		return;
 	}else{
 		srand(time(NULL));
-		if(everyClock.getElapsedTime().asSeconds() >= 1.0){//1초가 됬다.
+		if(everyClock.getElapsedTime().asSeconds()*timeRatio >= 1.0){//1초가 됬다.
 			int random = rand()%5;
 			printf("[%d]\n",random);
 			if(random == 0){//5%
@@ -41,4 +46,13 @@ void Shell::update(){
 
 void Shell::draw(RenderWindow &window){
 	window.draw(spShell);
+}
+void Shell::setPosition(Vector2f _pos){
+	spShell.setPosition(_pos);
+}
+void Shell::setDead(bool _dead){
+	isDead=_dead;
+}
+bool Shell::getDead(){
+	return isDead;
 }

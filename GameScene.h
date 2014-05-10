@@ -10,6 +10,7 @@
 #include "TimeManager.h"
 #include "Button.h"
 #include "Shell.h"
+#include "Collision.h"
 
 using namespace sf;
 using namespace std;
@@ -29,7 +30,10 @@ class GameScene : public SceneBase{
 		Texture texUnderwater;
 		Sprite spUnderwater;
 
+		Clock bulletClock;
+
 		bool isEnd;
+		bool bulletTime;
 		void endGame();
 
 	public:

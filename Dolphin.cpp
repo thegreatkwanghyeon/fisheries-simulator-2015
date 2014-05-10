@@ -29,9 +29,9 @@ void Dolphin::update(){
 		return;
 	if(delta.getElapsedTime().asSeconds() >= 0.001){
 		if(direction)
-			setPosition(Vector2f(getPosition().x+speed,getPosition().y));
+			setPosition(Vector2f(getPosition().x+speed*timeRatio,getPosition().y));
 		else
-			setPosition(Vector2f(getPosition().x-speed,getPosition().y));
+			setPosition(Vector2f(getPosition().x-speed*timeRatio,getPosition().y));
 		delta.restart();
 	}
 }

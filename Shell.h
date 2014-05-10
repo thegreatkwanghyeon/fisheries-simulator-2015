@@ -2,6 +2,7 @@
 #define __shell__
 
 #include "stdafx.h"
+#include "Global.h"
 
 using namespace sf;
 using namespace std;
@@ -12,7 +13,7 @@ private:
 	Texture texClosedShell;
 	Sprite spShell;
 
-	bool chkOpen;
+	bool chkOpen,isDead;
 
 	Clock clock,everyClock;
 public:
@@ -24,6 +25,11 @@ public:
 	const Transform& getTransform()const{ return spShell.getTransform(); }
 	const IntRect& getTextureRect()const{ return spShell.getTextureRect(); }
 
+	bool getCollision(){return chkOpen;}
+	void setPosition(Vector2f _pos);
+
+	void setDead(bool _dead);
+	bool getDead();
 };
 
 #endif

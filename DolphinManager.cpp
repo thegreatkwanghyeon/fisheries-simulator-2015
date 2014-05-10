@@ -24,7 +24,7 @@ void DolphinManager::update(){
 	srand(time(NULL));
 	if (hook->getHookable()){//훅을 이용가능한 경우
 		for (vector<Dolphin*>::iterator it = dolphinList.begin(); it != dolphinList.end(); ++it){
-			if (!(*(it))->getDead() && BoundingBoxTest((*(it)), hook)){
+			if (hook->getHookable() && !(*(it))->getDead() && BoundingBoxTest((*(it)), hook)){//훅의 사용가능성을 다시 한번 살펴서 일타쌍피 방지해봄...테스트
 				(*(it))->setDead();
 				hook->setShrinkSpeed(0.91f + (*(it))->getSize()*0.08);
 				printf("hook speed : %.5f\n",0.91f + (*(it))->getSize()*0.08);
@@ -39,7 +39,7 @@ void DolphinManager::update(){
 			(*(it))->setPosition(hook->getEndPoint());
 			if(hook->getState()){
 				isScore=true;
-				score=(*(it))->getSize()*50.0f;
+				score=(*(it))->getSize()*149.0f;
 				delete *(it);
 				it--;
 				dolphinList.erase(it+1);
@@ -73,7 +73,7 @@ void DolphinManager::draw(RenderWindow &window){
 void DolphinManager::setHook(Hook* _hook){
 	hook = _hook;
 }
-int DolphinManager::getScore(){
+float DolphinManager::getScore(){
 	if(isScore){
 		isScore=false;
 		return score;

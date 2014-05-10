@@ -16,8 +16,9 @@ StageScene::StageScene(){
 	
 	for(vector<Stage>::iterator iter=stages.begin(); iter!=stages.end(); iter++){
 		//iter->button->setPosition(20,20);
-	//	iter->button->setOrigin(25,75);
-	//	iter->button->setText(to_string(iter->highScore),14);
+		//iter->button->setOrigin(25,75);
+		iter->button->setText(to_string(iter->highScore),14, Vector2f(0,50));
+		iter->button->setTextColor(Color(0,0,0));
 	}
 
 	stages.at(0).button->setPosition(50-25,150-75);
@@ -47,7 +48,7 @@ void StageScene::update(){
 	
 	for(vector<Stage>::iterator iter=stages.begin(); iter != stages.end(); iter++){
 		iter->button->update();
-//		iter->button->setText(to_string(iter->highScore),14);
+		iter->button->setText(to_string(iter->highScore),14,Vector2f(0,50));
 
 		if(iter->button->checkMouseClick()){
 			Director::getInstance()->pushScene(new GameScene((unsigned int &)iter->highScore, (unsigned int)3));

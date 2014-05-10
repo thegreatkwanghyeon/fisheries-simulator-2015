@@ -1,4 +1,5 @@
 #include "TimeManager.h"
+#include "Global.h"
 
 TimeManager::TimeManager() : timeRemaining(60.0f){
 	font.loadFromFile("font/numbers.ttf");
@@ -13,8 +14,8 @@ TimeManager::~TimeManager(){
 
 void TimeManager::update(){
 
-	timeRemaining -= clock.getElapsedTime().asSeconds();
-	//time.setString("Time : " + to_string((int)ceil(timeRemaining)));
+	timeRemaining -= clock.getElapsedTime().asSeconds()*timeRatio;
+	time.setString("Time : " + to_string((int)ceil(timeRemaining)));
 
 
 	clock.restart();

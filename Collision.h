@@ -23,8 +23,8 @@ public:
 		sf::Transform trans = shell->getTransform();
 		sf::IntRect local = shell->getTextureRect();
 		Vector2f margin;
-		margin.x=local.width/3.0f;
-		margin.y=local.height/3.0f;
+		margin.x=15.0f;
+		margin.y=15.0f;
 
 		Points[0] = trans.transformPoint(margin.x, margin.y);
 		Points[1] = trans.transformPoint(local.width-margin.x, margin.y);
@@ -57,5 +57,6 @@ public:
 };
 
 bool BoundingBoxTest(Dolphin* Dolphin1, Hook* Dolphin2);
+bool BoundingBoxTest(Shell* shell1, Hook* Dolphin2);
 
 #endif

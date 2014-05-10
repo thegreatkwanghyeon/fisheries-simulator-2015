@@ -40,12 +40,14 @@ class Button {
 		void draw(sf::RenderWindow &window);
 		void setPosition(float _x, float _y);
 		void setText (sf::String _name, unsigned int _size = 14);
+		void setText(sf::String _name, unsigned int _size,  sf::Vector2f _position);
 		void enableButton();
 		void disableButton();
 		bool checkMouseClick();
 		void setHotkey(sf::Keyboard::Key _hotkey);
 		void setSprite(sf::String _path);
 		void setOrigin(float x, float y);
+		void setTextColor(sf::Color _color);
 
 		bool getButtonEneble();
 		void setTexture(sf::String _path);

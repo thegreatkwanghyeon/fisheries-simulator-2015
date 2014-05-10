@@ -4,6 +4,7 @@
  */
 
 #include "Hook.h"
+#include "Global.h"
 
 Hook::Hook() : currentAngle(0), rotatedAngle(0), movementConstant(3.33f), isRotatable(true), scaleRatio(1.0f), screenWidth(800), screenHeight(600), hookable(true){
 	texture.loadFromFile("img/hook.png");
@@ -23,7 +24,7 @@ Hook::~Hook(){
 void Hook::update(){
 	if(isRotatable){
 		rotatedAngle = (cos(currentAngle)+sin(currentAngle))*60+90;
-		currentAngle += movementConstant*deltaClock.getElapsedTime().asSeconds();
+		currentAngle += movementConstant*deltaClock.getElapsedTime().asSeconds()*timeRatio;
 		sprite.setRotation(rotatedAngle);	
 	}
 

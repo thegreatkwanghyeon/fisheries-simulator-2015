@@ -29,6 +29,18 @@ void Button::setText(sf::String _name, unsigned int _size){ //_size 에 값을 안주
 
 }
 
+void Button::setText(sf::String _name, unsigned int _size,  sf::Vector2f _position){
+	buttonName.setFont(font);
+	buttonName.setString(_name);
+	buttonName.setCharacterSize(_size);
+	buttonName.setPosition(position.x + texture.getSize().x / 2 - buttonName.getLocalBounds().width/2 + _position.x ,position.y + texture.getSize().y / 8 - buttonName.getLocalBounds().height + _position.y);
+
+}
+
+void Button::setTextColor(sf::Color _color){
+	buttonName.setColor(_color);
+}
+
 bool Button::isMouseOver(sf::Vector2f _mousePosition){
 	//buttonRect 범위 안에 _mousePosition 이 있는가
 	return buttonRect.contains(_mousePosition);

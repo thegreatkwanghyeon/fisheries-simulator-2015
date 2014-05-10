@@ -24,7 +24,7 @@ public :
 	void draw(RenderWindow &window);
 
 	void setHook(Hook* _hook);
-	int getScore();
+	float getScore();
 };
 
 #endif

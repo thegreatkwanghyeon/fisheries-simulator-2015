@@ -2,6 +2,7 @@
 #define __dolphin__
 
 #include "stdafx.h"
+#include "Global.h"
 using namespace sf;
 using namespace std;
 
