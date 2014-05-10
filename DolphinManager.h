@@ -14,17 +14,19 @@ private :
 	vector<Dolphin*> dolphinList;
 	const int numberOfDolphin;//화면에 존재할 돌고래의 수
 	Hook* hook;
+	unsigned int difficulty;
 	bool isScore;
 	float score;
 	Well512 random;
 public :
-	DolphinManager();
+	DolphinManager(unsigned int _difficulty);
 	~DolphinManager();
 	void update();
 	void draw(RenderWindow &window);
 
 	void setHook(Hook* _hook);
 	float getScore();
+	void setDifficulty(unsigned int _diff){difficulty = _diff;};
 };
 
 #endif

@@ -5,7 +5,7 @@ GameScene::GameScene(unsigned int &score) : difficulty(1){
 	texUnderwater.loadFromFile("img/underwater.png");
 	spUnderwater.setTexture(texUnderwater);
 	hook = new Hook();
-	dol = new DolphinManager();
+	dol = new DolphinManager(1);
 	earningManager = new EarningManager();
 	timeManager = new TimeManager();
 	dol->setHook(hook);
@@ -23,7 +23,7 @@ GameScene::GameScene(unsigned int &score, unsigned int difficulty){
 	texUnderwater.loadFromFile("img/underwater.png");
 	spUnderwater.setTexture(texUnderwater);
 	hook = new Hook();
-	dol = new DolphinManager();
+	dol = new DolphinManager(difficulty);
 	earningManager = new EarningManager();
 	timeManager = new TimeManager();
 	dol->setHook(hook);
@@ -70,7 +70,7 @@ void GameScene::update(){
 	earningManager->update();
 	timeManager->update();
 
-	getScore = dol->getScore();
+	getScore = (int)dol->getScore()*difficulty;
 	if(getScore != 0){
 		earningManager->increaseEarning(getScore);
 	}
@@ -88,7 +88,7 @@ void GameScene::update(){
 			if(hook->getState()){//훅이 본위치로 돌아간경우
 				delete shell;
 				shell=NULL;
-				earningManager->increaseEarning(500);
+				earningManager->increaseEarning(500*difficulty);
 			}
 		}else if(shell->getDead() == false && shell->getCollision() && BoundingBoxTest(shell,hook)){
 			printf("collision!!! shell!!!\n");
