@@ -6,10 +6,10 @@ DolphinManager::DolphinManager() : numberOfDolphin(5){
 	srand(time(NULL));
 	for(int i=0;i<numberOfDolphin;i++){
 		if(rand()%2){
-			dolphinList.push_back(new Dolphin(random.Next(1,3),false,1.0f-(random.Next()%5)*0.1));
+			dolphinList.push_back(new Dolphin(random.Next(1,4),false,1.0f-(random.Next()%5)*0.1));
 			dolphinList[i]->setPosition(Vector2f(-100,(random.Next()%400)+200));
 		}else{
-			dolphinList.push_back(new Dolphin(random.Next(1,3),false,1.0f-(random.Next()%5)*0.1));
+			dolphinList.push_back(new Dolphin(random.Next(1,4),false,1.0f-(random.Next()%5)*0.1));
 			dolphinList[i]->setPosition(Vector2f(900,(random.Next()%400)+200));
 		}
 	}
@@ -57,10 +57,10 @@ void DolphinManager::update(){
 	}
 	for(int i=dolphinList.size();i<numberOfDolphin;i++){
 		if(rand()%2){
-			dolphinList.push_back(new Dolphin(random.Next(1,3),true,1.0f-(random.Next()%5)*0.1));
+			dolphinList.push_back(new Dolphin(random.Next(1,4),true,1.0f-(random.Next()%5)*0.1));
 			dolphinList[i]->setPosition(Vector2f(-100,(random.Next()%400)+200));
 		}else{
-			dolphinList.push_back(new Dolphin(random.Next(1,3),false,1.0f-(random.Next()%5)*0.1));
+			dolphinList.push_back(new Dolphin(random.Next(1,4),false,1.0f-(random.Next()%5)*0.1));
 			dolphinList[i]->setPosition(Vector2f(900,(random.Next()%400)+200));
 		}
 	}

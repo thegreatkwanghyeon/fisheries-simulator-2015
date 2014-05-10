@@ -47,7 +47,7 @@ GameScene::~GameScene(){
 	delete dol;
 	delete hook;
 	delete earningManager;
-	//if(shell != NULL)
+	if(shell != NULL)
 		delete shell;
 }
 void GameScene::update(){
@@ -81,15 +81,19 @@ void GameScene::update(){
 	if(timeManager->getTime() <= 0.0f){
 		isEnd=true;
 	}
-	shell->update();
-	if(shell->getDead() == true){
-		shell->setPosition(hook->getEndPoint());
-		//if(hook->getHookable()){//훅이 본위치로 돌아간경우
-		//	delete shell;
-	//	}
-	}else if(shell->getDead() == false /*&& shell->getCollision()*/ && BoundingBoxTest(shell,hook)){
-		printf("collision!!! shell!!!\n");
-		shell->setDead(true);
+	if(shell != NULL){
+		shell->update();
+		if(shell->getDead() == true){
+			shell->setPosition(hook->getEndPoint());
+			if(hook->getState()){//훅이 본위치로 돌아간경우
+				delete shell;
+				shell=NULL;
+				earningManager->increaseEarning(500);
+			}
+		}else if(shell->getDead() == false && shell->getCollision() && BoundingBoxTest(shell,hook)){
+			printf("collision!!! shell!!!\n");
+			shell->setDead(true);
+		}
 	}
 }
 void GameScene::draw(RenderWindow &window){
@@ -100,7 +104,7 @@ void GameScene::draw(RenderWindow &window){
 	timeManager->draw(window);
 	if(isEnd)
 		endButton->draw(window);
-	//if(shell != NULL)
+	if(shell != NULL)
 		shell->draw(window);
 }
 int GameScene::changeScene(){

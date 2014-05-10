@@ -51,7 +51,7 @@ void StageScene::update(){
 		iter->button->setText(to_string(iter->highScore),14,Vector2f(0,50));
 
 		if(iter->button->checkMouseClick()){
-			Director::getInstance()->pushScene(new GameScene((unsigned int &)iter->highScore, (unsigned int)3));
+			Director::getInstance()->pushScene(new GameScene((unsigned int &)iter->highScore, (unsigned int)(iter-stages.begin()+1)));
 		}
 
 		if(iter->highScore > 50){
